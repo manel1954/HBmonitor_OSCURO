@@ -71,7 +71,7 @@
       </script>
 <style>
     body{
-    background-image: url("http://54.36.190.79/dvs/images/fondo_hblink3.png"); 
+background-image: url(http://54.36.190.79/dvs/images/fondo_hblink3.png);
   }
 .color_naranja{
 color: rgb(204, 135, 7);
@@ -144,9 +144,11 @@ a:active {
 .link:hover {background-color: #3e8e41;}
 
 .dropbtn_naranja {
-  background-color: #e48c08;
+  width: 351px;
+  height: 35px;
+  background-color: #22e408;
   border: none;
-  color: white;
+  color: #000;
   padding: 8px;
   text-align: center;
   text-decoration: none;
@@ -154,7 +156,7 @@ a:active {
   font-size: 14px;
   font-weight: 500;
   margin: 4px 2px;
-  border-radius: 8px;
+  border-radius: 3px;
   box-shadow: 0px 8px 10px rgba(0,0,0,0.1);
 }
 
@@ -183,7 +185,7 @@ a:active {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f1f1f1;
+  background-color: #e87611;
   min-width: 140px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
@@ -206,6 +208,63 @@ a:active {
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {background-color: #8e6e3e;}
 table, td, th {border: .5px solid #d0d0d0; padding: 2px; border-collapse: collapse; text-align:center;}
+
+#contenedor {
+            display: flex; /* Alineación de los elementos hijos en una fila */
+            gap: 15px; /* Separación entre elementos hijos */
+        }
+
+        #areaTexto {
+            width: 300px;
+            height: 100px;
+            resize: none; /* Evitar redimensionamiento */
+        }
+
+      .rectangulo_naranja {
+      width: 400px;
+      height: 100px;
+      background-color: #F2B735; /* Color azul */
+      border-radius: 4px; /* Bordes redondeados */
+      padding: 10px; /* Espaciado interno para el texto */
+      color: #000; /* Color de texto blanco */
+      text-align: left; /* Alineación del texto al centro */
+      position: relative; /* Necesario para posicionar la imagen absolutamente */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    }
+
+      .rectangulo_verde {
+      width: 400px;
+      height: 100px;
+      background-color: #459740; /* Color azul */
+      border-radius: 4px; /* Bordes redondeados */
+      padding: 10px; /* Espaciado interno para el texto */
+      color: #000; /* Color de texto blanco */
+      text-align: left; /* Alineación del texto al centro */
+      position: relative; /* Necesario para posicionar la imagen absolutamente */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    }
+
+    .rectangulo_rojo {
+      width: 400px;
+      height: 100px;
+      background-color: #BD2E3A; /* Color azul */
+      border-radius: 4px; /* Bordes redondeados */
+      padding: 10px; /* Espaciado interno para el texto */
+      color: #000; /* Color de texto blanco */
+      text-align: left; /* Alineación del texto al centro */
+      position: relative; /* Necesario para posicionar la imagen absolutamente */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    }
+
+    .imagen {
+      position: absolute;
+      top: 50%;
+      left: 80%;
+      transform: translate(-50%, -50%);
+      max-width: 100%;
+      max-height: 100%;
+    }
+
 </style>
 <meta name="description" content="Copyright (c) 2016, 2017, 2018, 2019.The Regents of the K0USY Group. All rights reserved. Version SP2ONG 2019-2020 (v20200721)" />
    </head>
@@ -220,81 +279,66 @@ table, td, th {border: .5px solid #d0d0d0; padding: 2px; border-collapse: collap
     <p style="text-align:center;"><span style="color:#e69f06;font-size: 22px; font-weight:bold;"><<<system_name>>></span></p>
     <p style="text-align:center;"><<<timeout_warning>>></p>
 
-<!-- Buttons HTML code-->
-<!-- <div class="button">
-    <a href="http://94.177.250.183/hblink/editar_reglas.php">EDITAR REGLAS</a>
-</div> -->
+<div id="contenedor">  
+      <div class="rectangulo_verde">
+          <div class="texto" style="font-size: 40px;font-weight: bold; " id="hotspots"></div>
+          <div class="texto" style="font-size: 18px;">HotSpots</div>
+          <img class="imagen" src="http://54.36.190.79/dvs/images/hotspots.png" width="80" alt="Imagen">
+      </div>
+      
+      <div class="rectangulo_naranja">
+          <div class="texto" style="font-size: 40px;font-weight: bold;" id="repetidores"></div>
+          <div class="texto" style="font-size: 18px;">Repetidores</div>
+          <img class="imagen" src="http://54.36.190.79/dvs/images/repetidores.png" width="80" alt="Imagen">
+      </div>
+  
+      <div class="rectangulo_rojo">
+          <div class="texto" style="font-size: 40px;font-weight: bold;" id="puentes"></div>
+          <div class="texto" style="font-size: 18px;">Puentes</div>
+          <img class="imagen" src="http://54.36.190.79/dvs/images/puentes.png" width="80" alt="Imagen">
+      </div>
+  </div>
 
+  <br>
 
-
-
-<!-- &nbsp; -->
 <div class="dropdown">
-  <button class="dropbtn_naranja">CONFIGURACIONES REGLAS</button>
+  <button class="dropbtn_naranja">CONFIGURAR REGLAS & DASHBOARD</button>
   <div class="dropdown-content">
-    <a href="http://54.36.190.79/hblink/editar_reglas.php">CONFIGURACION ACTIVAR DESACTIVAR REGLAS</a>
-    <a href="http://54.36.190.79/hblink/editar_reglas_cambios.php">CREAR EDITAR PARAMETROS REGLAS</a>
+<a href="http://54.36.190.79/hblink/editar_reglas.php">CONFIGURACION ACTIVAR DESACTIVAR REGLAS</a>
+<a href="http://54.36.190.79/hblink/editar_reglas_cambios.php">CREAR EDITAR PARAMETROS REGLAS</a>
+<a href="http://54.36.190.79/hblink/cambia_claro_oscuro.php">DASHBOARD OSCURO</a>
+<a href="http://54.36.190.79/hblink/cambia_oscuro_claro.php">DASHBOARD CLARO</a>
+<a href="http://54.36.190.79/hblink/cambia_nombre_dashboard.php">CAMBIA NOMBRE DASHBOARD</a>
   </div>
 </div>
 
-
-<div class="dropdown">
+<!-- <div class="dropdown">
   <button class="dropbtn_azul">CAMBIAR COLOR DASHBOARD</button>
   <div class="dropdown-content">
-    <a href="http://54.36.190.79/hblink/cambia_claro_oscuro.php">DASHBOARD OSCURO</a>
-    <a href="http://54.36.190.79/hblink/cambia_oscuro_claro.php">DASHBOARD CLARO</a>
+<a href="http://54.36.190.79/hblink/cambia_claro_oscuro.php">DASHBOARD OSCURO</a>
+<a href="http://54.36.190.79/hblink/cambia_oscuro_claro.php">DASHBOARD CLARO</a>
   </div>
-</div>
-<!-- &nbsp;
-<a target='_blank' href="#/log.php"><button class="button link">Lastheard</button></a>
-&nbsp; -->
+</div> -->
 
 <noscript>You must enable JavaScript</noscript>
         	<p id="hblink"></p>
 		<p id="bridge"></p>
 </div>
-<!-- LOG monitor -->
-<!--
-<div style="width: 1250px; margin-left:0px;">
-<fieldset style="width: 1200px; margin-left:0px;margin-right:0px;font-size:14px;border-top-left-radius: 10px; border-top-right-radius: 10px;border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;"><legend><b><font color="#000">&nbsp;.: Call Log Window :.&nbsp;</font></b></legend>
-         <pre id="log" style="height: 20em; text-align: left; overflow-y: scroll; font-size:13px; background-color: #000000; color:#b1eee9;"></pre>
-</fieldset></div>
--->
-<!-- TG table -->
-<!--	
-<div style="width: 1100px; margin-left:0px;">
-<fieldset style="box-shadow:0 0 10px #999;background-color:#e0e0e0e0; width:1050px;margin-left:15px;margin-right:15px;font-size:14px;border-top-left-radius: 10px; border-top-right-radius: 10px;border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
-<legend><b><font color="#000">&nbsp;.: Talk Group HBLink :.&nbsp;</font></b></legend>
-<table style="margin-top:5px; table-layout:fixed; font: 10pt arial, sans-serif; background-color: #f9f9f9f9;">
-    <tr style=" height: 32px;font: 10pt arial, sans-serif; background-color:#6A7D8E; color:white; border:0;">
-        <th style='width: 150px;'>TG#</th>
-        <th style='width: 80px;'>TS 1</th>
-        <th style='width: 80px;'>TS 2</th>
-        <th style='width: 790px;'>Description</th>
-    </tr>
-   <tr>
-        <td>&nbsp;<b>TG 5</b>&nbsp;</td>
-        <td>&nbsp;<b></b>&nbsp;</td>
-    <td>&nbsp;<b>D | S</b>&nbsp;</td>
-    <td>Talk group XLX132-D D-Star/DMR/C4FM.</td>
-    </tr>
-     <tr>
-        <td>&nbsp;<b>TG 9999</b>&nbsp;</td>
-    <td>&nbsp;<b></b>&nbsp;</td>
-    <td>&nbsp;<b>D | S</b>&nbsp;</td>
-        <td>Echo (Parrot).</td>
-    </tr>
-</table>
-<br>
-<span style="text-align: center;">Hotspot: D - duplex | S - smiplex</span>
-</fieldset></div><br>
--->  
+
 <p style="text-align: center;color: #edebf0e0;"><span style="text-align: center;">
     Copyright (c) 2016, 2017, 2018, 2019<br>The Regents of the <a href=http://k0usy.mystrikingly.com/>K0USY Group</a>. All rights reserved.<br><a href=https://github.com/sp2ong/HBmonitor>Version SP2ONG 2019-2020</a>.<br></span>
     <a style="color: rgb(157,194,10);font-size: 18px;font-weight: 800;" href=http://associacioader.com.com>Dashboard editado by EA3EIZ</a>
-    <!-- THIS COPYRIGHT NOTICE MUST BE DISPLAYED AS A CONDITION OF THE LICENCE GRANT FOR THIS SOFTWARE. ALL DERIVATEIVES WORKS MUST CARRY THIS NOTICE -->
-    <!-- This is version of HBMonitor SP2ONG 2019-2020 (v20200721)-->
 </p>
 </center>
+
+<script>
+  var miTexto1 = 2;
+  var miTexto2 = 9;
+  var miTexto3 = 0;
+  document.getElementById("hotspots").innerHTML = miTexto1;
+  document.getElementById("repetidores").innerHTML = miTexto2;
+  document.getElementById("puentes").innerHTML = miTexto3;
+</script>
+
 </body>
 </html>
