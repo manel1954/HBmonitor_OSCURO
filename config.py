@@ -1,4 +1,4 @@
-REPORT_NAME     = 'DASHBOARD EA3EIZ OVH-79'
+REPORT_NAME     = "Dashboard EA3EIZ OVH 79"
 CONFIG_INC      = True                           # Include HBlink stats
 LASTHEARD_INC   = True                           # Include Lastheard (10)
 HOMEBREW_INC    = True                           # Include Homebrew Peers 
